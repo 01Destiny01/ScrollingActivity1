@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.example.scrollingactivity1.databinding.ActivityScrollingBinding
 import com.google.android.material.bottomappbar.BottomAppBar
 
@@ -31,8 +32,13 @@ class ScrollingActivity : AppCompatActivity() {
 
         }
         binding.barra.setNavigationOnClickListener {
-            Snackbar.make(binding.root,"mensaje con exito", Snackbar.LENGTH_LONG)
+            Snackbar.make(binding.root,getString(R.string.exito),
+                Snackbar.LENGTH_LONG)
                 .setAnchorView(binding.fab)
+                .setAction("Boton de acción"){
+                Toast.makeText(this,"Mensaje toast", Toast.LENGTH_LONG)
+
+                }
                 .show()
 
         }
